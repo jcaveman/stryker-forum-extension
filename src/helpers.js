@@ -10,7 +10,7 @@ var helpers = {
       if (xhr.status === 200) {
         callback(xhr.response, url);
       } else {
-        console.log('Lazy load failed. ' + xhr.status);
+        console.log('Request failed: ' + xhr.status);
         return false;
       }
     };
