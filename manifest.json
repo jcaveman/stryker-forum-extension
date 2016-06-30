@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Stryker Forum Mods",
+  "description": "This extension makes forum content easier to browse",
+  "version": "1",
+
+  "permissions": [
+    "tabs","<all_urls>"
+  ],
+
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.yamahastarstryker.com/*"],
+      "js": ["build/helpers.js", "build/lazyloader.js", "build/clickRotator.js"],
+      "css": ["build/styles.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
