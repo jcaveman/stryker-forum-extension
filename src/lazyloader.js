@@ -2,7 +2,7 @@
   var pageNavEls = document.querySelectorAll('.pagenav'),
       postsContainer = document.querySelector('#posts'),
       lazyLoadPageCount = 0,
-      last_known_scroll_position = 0,
+      lastScrollPosition = 0,
       ticking = false,
       isLoading = false,
       startPage,
@@ -48,7 +48,7 @@
   }
 
   function scrollHandler(e) {
-    last_known_scroll_position = window.scrollY;
+    lastScrollPosition = window.scrollY;
     if (!ticking) {
       window.requestAnimationFrame(function() {
         if (helpers.isElementInViewport(pageNavEls[1])) {
